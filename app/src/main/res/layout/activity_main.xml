@@ -37,7 +37,7 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="185dp"
+        android:layout_width="188dp"
         android:layout_height="143dp"
         android:background="@drawable/tarefa"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
