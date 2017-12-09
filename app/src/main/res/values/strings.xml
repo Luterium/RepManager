@@ -5,4 +5,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_republica">Republica</string>
     <string name="appImage">Imagem do app</string>
+    <string name="toolbarImage">Toolbar img</string>
+    <string name="repToolbar1">REP</string>
 </resources>
