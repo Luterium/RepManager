@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mdsgroup.repmanager.MainActivity">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="387dp"
+        android:layout_height="56dp"
+        android:background="?android:attr/windowBackground"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:menu="@menu/navigation">
+
+    </android.support.design.widget.BottomNavigationView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:background="@drawable/tiltanaojajatemmais"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="192dp"
+        android:layout_height="135dp"
+        android:background="@drawable/carona"
+        tools:layout_editor_absoluteX="190dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="185dp"
+        android:layout_height="143dp"
+        android:background="@drawable/tarefa"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="185dp"
+        android:layout_height="155dp"
+        android:background="@drawable/republica"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="194dp"
+        android:layout_height="144dp"
+        android:background="@drawable/tomate__Roberto_Custodio_JL"
+        tools:layout_editor_absoluteX="190dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="191dp"
+        android:layout_height="156dp"
+        android:background="?android:attr/colorBackgroundFloating"
+        android:cropToPadding="false"
+        app:srcCompat="@drawable/repManagerr128"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+</android.support.constraint.ConstraintLayout>
