@@ -24,49 +24,53 @@
         android:layout_width="188dp"
         android:layout_height="135dp"
         android:background="@drawable/tiltanaojajatemmais"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="192dp"
+        android:layout_width="188dp"
         android:layout_height="135dp"
         android:background="@drawable/carona"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="185dp"
         android:layout_height="143dp"
         android:background="@drawable/tarefa"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="144dp" />
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="185dp"
-        android:layout_height="155dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/republica"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="294dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="194dp"
-        android:layout_height="144dp"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/tomato"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="144dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="191dp"
-        android:layout_height="156dp"
-        android:background="?android:attr/colorBackgroundFloating"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/appImage"
         android:cropToPadding="false"
-        app:srcCompat="@drawable/repmanager128"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="294dp" />
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/repmanager128" />
 
 </android.support.constraint.ConstraintLayout>

@@ -4,4 +4,5 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_republica">Republica</string>
+    <string name="appImage">Imagem do app</string>
 </resources>
