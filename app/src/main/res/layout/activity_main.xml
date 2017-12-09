@@ -19,50 +19,6 @@
 
     </android.support.design.widget.BottomNavigationView>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="188dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/tiltanaojajatemmais"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="188dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/carona"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="188dp"
-        android:layout_height="135dp"
-        android:background="@drawable/tarefa"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="185dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/republica"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="188dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/tomato"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="188dp"
@@ -70,6 +26,7 @@
         android:background="@android:color/background_light"
         android:contentDescription="@string/appImage"
         android:cropToPadding="false"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/repmanager128" />
@@ -83,5 +40,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:contentDescription="@string/mainButton1"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/finances" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:contentDescription="@string/mainButton2"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/carono" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="@string/mainButton3"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:srcCompat="@drawable/task" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="@string/mainButton4"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:srcCompat="@drawable/market" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="188dp"
+        android:layout_height="135dp"
+        android:contentDescription="@string/mainButton5"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/repinfo" />
 
 </android.support.constraint.ConstraintLayout>

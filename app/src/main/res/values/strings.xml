@@ -7,4 +7,9 @@
     <string name="appImage">Imagem do app</string>
     <string name="toolbarImage">Toolbar img</string>
     <string name="repToolbar1">REP</string>
+    <string name="mainButton1">Finances</string>
+    <string name="mainButton2">Caronas</string>
+    <string name="mainButton3">Tasks</string>
+    <string name="mainButton4">Mercado</string>
+    <string name="mainButton5">Republica</string>
 </resources>
