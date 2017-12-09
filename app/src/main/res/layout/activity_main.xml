@@ -55,7 +55,7 @@
         android:id="@+id/button5"
         android:layout_width="194dp"
         android:layout_height="144dp"
-        android:background="@drawable/tomate__Roberto_Custodio_JL"
+        android:background="@drawable/tomato"
         tools:layout_editor_absoluteX="190dp"
         tools:layout_editor_absoluteY="144dp" />
 
@@ -65,7 +65,7 @@
         android:layout_height="156dp"
         android:background="?android:attr/colorBackgroundFloating"
         android:cropToPadding="false"
-        app:srcCompat="@drawable/repManagerr128"
+        app:srcCompat="@drawable/repmanager128"
         tools:layout_editor_absoluteX="192dp"
         tools:layout_editor_absoluteY="294dp" />
 
