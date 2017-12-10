@@ -8,9 +8,14 @@
     android:id="@+id/drawerLayout">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
         android:id="@+id/container"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp" />
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -31,7 +36,7 @@
 
                 <ImageButton
                     android:id="@+id/buttomFinancas"
-                    android:layout_width="177dp"
+                    android:layout_width="165dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"

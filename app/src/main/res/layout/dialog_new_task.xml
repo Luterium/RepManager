@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,37 +18,43 @@
         android:textStyle="bold"/>
 
 
-    <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/editTextMember"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Spinner
+        android:id="@+id/memberSpinner"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
-        android:ems="10"
-        android:hint="@string/membro"
-        android:inputType="text" />
-
-
-    <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/editDateLimit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:ems="10" />
+
+
+    <TextView
+        android:id="@+id/limiteData"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:ems="10"
-        android:hint="@string/data_task"
-        android:inputType="date" />
+        android:text=""
+        android:hint="Data Limite"
+        android:onClick="setDate"
+        android:textSize="15sp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp" />
+
 
 
     <EditText
-        android:layout_marginTop="15dp"
         android:id="@+id/editTaskDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
         android:hint="@string/task_title"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textSize="15sp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        />
 
     <Button
         android:layout_marginTop="15dp"
