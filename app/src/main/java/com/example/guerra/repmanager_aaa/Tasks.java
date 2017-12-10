@@ -74,29 +74,6 @@ public class Tasks extends AppCompatActivity {
 
     }
 
-    public String loadJSONFromAssetreal(String path) {
-        String json = null;
-        try {
-            InputStream is = getAssets().open(path);
-
-            int size = is.available();
-
-            byte[] buffer = new byte[size];
-
-            is.read(buffer);
-
-            is.close();
-
-            json = new String(buffer, "UTF-8");
-
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
-
-    }
 
     public FloatingActionButton fab;
     public List<String> responsibles = new ArrayList<String>();
@@ -127,33 +104,7 @@ public class Tasks extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
-    public void removeTask(View view) throws JSONException {
-//        TextView taskView = (TextView)view.findViewById(R.id.taskView);
-//        TextView responsibleViewContent = (TextView)view.findViewById(R.id.responsibleViewContent);
-//        TextView dataViewContent = (TextView)view.findViewById(R.id.dataViewContent);
-//
-//        int index = 0;
-//        if (taskList != null) {
-//            for (int i=0;i<taskList.length();i++){
-//
-//                JSONObject jsonObj = taskList.getJSONObject(i);
-//                String res = jsonObj.getString("responsible");
-//                String tas = jsonObj.getString("task");
-//                String dat = jsonObj.getString("date");
-//
-//
-//                String res2 = responsibleViewContent.getText().toString();
-//                String tas2 = taskView.getText().toString();
-//                String dat2 = dataViewContent.getText().toString();
-//
-//                if(res.equals(res2) && tas.equals(tas2) && dat.equals(dat2)){
-//                    index = i;
-//                    continue;
-//                }
-//
-//            }
-//        }
-    }
+
 
     public void addTask(View view) {
 
@@ -191,9 +142,23 @@ public class Tasks extends AppCompatActivity {
         };
 
 
+        String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
+        File jsonFile = new File(path + "/members.json");
+
+        if (!jsonFile.exists()){
+
+            File projDir = new File(path);
+            if (!projDir.exists())
+                projDir.mkdirs();
+
+            jsonFile = new File(path + "/members.json");
+            String[] save = { "{\"members\":[{\"name\":\"Jesus Cristo\",\"ingressDate\":\"25/12/0000\"}]}" };
+            Save(jsonFile, save);
+        }
+
         try {
 
-            JSONObject obj = new JSONObject(loadJSONFromAssetreal("members.json"));
+            JSONObject obj = new JSONObject(loadJSONFromAsset(path + "/members.json"));
             JSONArray memberList = obj.getJSONArray("members");
             for (int i = 0; i < memberList.length(); i++){
                 JSONObject jsonObj = memberList.getJSONObject(i);
@@ -372,20 +337,19 @@ public class Tasks extends AppCompatActivity {
 
 
         String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
-        File taskFile = new File(path + "/tasks.json");
+        File jsonFile = new File(path + "/tasks.json");
 
-        if (!taskFile.exists()){
+        if (!jsonFile.exists()){
             File projDir = new File(path);
             if (!projDir.exists())
                 projDir.mkdirs();
 
-            File file = new File(path + "/tasks.json");
             String[] save = { "{ \"task\" : [] }" };
-            Save(file, save);
+            Save(jsonFile, save);
         }
 
         try {
-            
+
             JSONObject obj = new JSONObject(loadJSONFromAsset(path + "/tasks.json"));
             taskList = obj.getJSONArray("tasks");
             for (int i = 0; i < taskList.length(); i++){

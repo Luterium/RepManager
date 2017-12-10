@@ -15,7 +15,7 @@
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="14dp"
-        android:paddingBottom="8dp"
+        android:paddingBottom="9dp"
         app:srcCompat="@drawable/task" />
 
     <TextView
@@ -52,7 +52,7 @@
 
     <TextView
         android:id="@+id/responsibleViewContent"
-        android:layout_width="60dp"
+        android:layout_width="73dp"
         android:layout_height="25dp"
         android:layout_below="@+id/taskView"
         android:layout_toEndOf="@+id/responsibleView"
@@ -78,6 +78,5 @@
         android:layout_alignTop="@+id/taskView"
         android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/remove"
-        android:onClick="removeTask" />
+        android:background="@drawable/remove" />
 </RelativeLayout>

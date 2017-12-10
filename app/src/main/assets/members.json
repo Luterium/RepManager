@@ -1,20 +1,7 @@
-{
-	"members" : [
-		{
-			"name" 			:	"Safa",
-			"ingressDate"	:	"03/03/2015"
-		},
-		{
-			"name" 			:	"Will",
-			"ingressDate"	:	"03/03/2015"
-		},
-		{
-			"name" 			:	"Guerra",
-			"ingressDate"	:	"07/03/2012"
-		},
-		{
-			"name" 			:	"Prado",
-			"ingressDate"	:	"03/03/2015"
-		}
-	]
+{"members":[
+	{
+		"name":"Jesus Cristo",
+		"ingressDate":"25/12/0000"
+	}
+]
 }
