@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "mdsgroup.repmanager"
+        applicationId "com.example.guerra.repmanager_aaa"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

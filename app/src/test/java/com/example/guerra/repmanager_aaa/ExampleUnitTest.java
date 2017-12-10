@@ -1,4 +1,4 @@
-package mdsgroup.repmanager;
+package com.example.guerra.repmanager_aaa;
 
 import org.junit.Test;
 
