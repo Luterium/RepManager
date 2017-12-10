@@ -5,7 +5,9 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Environment;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,11 +15,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -48,6 +52,8 @@ public class Tasks extends AppCompatActivity {
     public String loadJSONFromAsset(String path) {
         String json = null;
         try {
+
+
             File initialFile = new File(path);
             InputStream is =  new FileInputStream(initialFile);
 
@@ -94,7 +100,6 @@ public class Tasks extends AppCompatActivity {
 
     }
 
-    public int sizeTaskList;
     public FloatingActionButton fab;
     public List<String> responsibles = new ArrayList<String>();
     public List<String> tasks = new ArrayList<String>();
@@ -124,7 +129,35 @@ public class Tasks extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
+    public void removeTask(View view) throws JSONException {
+//        TextView taskView = (TextView)view.findViewById(R.id.taskView);
+//        TextView responsibleViewContent = (TextView)view.findViewById(R.id.responsibleViewContent);
+//        TextView dataViewContent = (TextView)view.findViewById(R.id.dataViewContent);
+//
+//        int index = 0;
+//        if (taskList != null) {
+//            for (int i=0;i<taskList.length();i++){
+//
+//                JSONObject jsonObj = taskList.getJSONObject(i);
+//                String res = jsonObj.getString("responsible");
+//                String tas = jsonObj.getString("task");
+//                String dat = jsonObj.getString("date");
+//
+//
+//                String res2 = responsibleViewContent.getText().toString();
+//                String tas2 = taskView.getText().toString();
+//                String dat2 = dataViewContent.getText().toString();
+//
+//                if(res.equals(res2) && tas.equals(tas2) && dat.equals(dat2)){
+//                    index = i;
+//                    continue;
+//                }
+//
+//            }
+//        }
 
+
+    }
     public void addTask(View view) {
 
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(Tasks.this);
@@ -192,6 +225,8 @@ public class Tasks extends AppCompatActivity {
                 memberDate.setText(date);
             }
         };
+
+
         mBuilder.setView(mView);
         final AlertDialog dialogPop = mBuilder.create();
 
@@ -213,11 +248,15 @@ public class Tasks extends AppCompatActivity {
                     try {
                         JSONObject member = new JSONObject();
                         member.put("responsible", memberSpinner.getSelectedItem().toString());
-                        member.put("task", editTaskDescription.getText());
-                        member.put("date", memberDate.getText());
-                        taskList.put(member);
-                        taskObj.put("tasks", taskList);
+                        member.put("task", editTaskDescription.getText().toString());
+                        member.put("date", memberDate.getText().toString());
 
+                        taskList.put(member);
+                        responsibles.add(memberSpinner.getSelectedItem().toString());
+                        tasks.add(editTaskDescription.getText().toString());
+                        dates.add(memberDate.getText().toString());
+
+                        taskObj.put("tasks", taskList);
                         File file = new File(path + "/tasks.json");
                         String[] save = { taskObj.toString() };
                         Save(file, save);
@@ -228,8 +267,17 @@ public class Tasks extends AppCompatActivity {
                     }
 
 
+                    Log.d("MyApp", responsibles.get(responsibles.size() - 1));
+
+                    ListView listView = (ListView)findViewById(R.id.listView);
+                    CustomAdapter newAdapter = new CustomAdapter();
+                    listView.setAdapter(newAdapter);
+
                     dialogPop.dismiss();
                     Log.d("MyApp","suck my dick");
+
+
+
 
                 }
                 else{
@@ -326,9 +374,11 @@ public class Tasks extends AppCompatActivity {
         }
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Log.d("MyApp","I am aaaaaa");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
@@ -338,7 +388,6 @@ public class Tasks extends AppCompatActivity {
             String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
             JSONObject obj = new JSONObject(loadJSONFromAsset(path + "/tasks.json"));
             taskList = obj.getJSONArray("tasks");
-            sizeTaskList = taskList.length();
             for (int i = 0; i < taskList.length(); i++){
 
                 JSONObject jsonObj = taskList.getJSONObject(i);
@@ -351,17 +400,24 @@ public class Tasks extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
+
         fab = (FloatingActionButton)findViewById(R.id.fab);
 
+
+
     }
+
+
 
     class CustomAdapter extends BaseAdapter {
 
         @Override
         public int getCount(){
-            return sizeTaskList;
+            return taskList.length();
         }
 
         @Override
@@ -375,10 +431,10 @@ public class Tasks extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int i, View view, ViewGroup viewGroup){
+        public View getView(final int i, View view, ViewGroup viewGroup){
 
             view = getLayoutInflater().inflate(R.layout.custom_task_layout, null);
-//          ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
+//            ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
             TextView taskView = (TextView)view.findViewById(R.id.taskView);
             TextView responsibleViewContent = (TextView)view.findViewById(R.id.responsibleViewContent);
             TextView dataViewContent = (TextView)view.findViewById(R.id.dataViewContent);
@@ -387,9 +443,45 @@ public class Tasks extends AppCompatActivity {
             taskView.setText(tasks.get(i));
             dataViewContent.setText(dates.get(i));
 
+            ImageButton delete = (ImageButton) view.findViewById(R.id.removeButtom);
+
+            delete.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                @Override
+                public void onClick(View v) {
+                    Log.d("MyApp","suck my dick" + i);
+
+                    try {
+
+                        responsibles.remove(i);
+                        tasks.remove(i);
+                        dates.remove(i);
+                        taskList.remove(i);
+
+                        String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
+                        JSONObject taskObj = new JSONObject();
+                        taskObj.put("tasks", taskList);
+                        File file = new File(path + "/tasks.json");
+                        String[] save = { taskObj.toString() };
+                        Save(file, save);
+                        ListView listView = (ListView)findViewById(R.id.listView);
+                        CustomAdapter newAdapter = new CustomAdapter();
+                        listView.setAdapter(newAdapter);
+
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+
+
 
             return view;
         }
+
+
 
     }
 }

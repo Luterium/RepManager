@@ -65,33 +65,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void openTasks(View view)
-    {
+    public void openTasks(View view){
         Intent intent = new Intent(MainActivity.this, Tasks.class);
         startActivity(intent);
     }
 
-    public void openRepublicInfo(View view)
-    {
-        Intent intent = new Intent (MainActivity.this, membersScreen.class);
-        startActivity(intent);
-    }
-
-    public void openMarket(View view)
-    {
-        Intent intent = new Intent (MainActivity.this, marketList.class);
-        startActivity(intent);
-    }
-
-    public void openFinances(View view)
-    {
-        Intent intent = new Intent (MainActivity.this, Finances.class);
-        startActivity(intent);
-    }
-
-    public void openCadastro(View view)
-    {
-        Intent intent = new Intent (MainActivity.this, cadastroInicial.class);
-        startActivity(intent);
-    }
 }
