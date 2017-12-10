@@ -370,8 +370,22 @@ public class Tasks extends AppCompatActivity {
 
         ListView listView = (ListView)findViewById(R.id.listView);
 
+
+        String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
+        File taskFile = new File(path + "/tasks.json");
+
+        if (!taskFile.exists()){
+            File projDir = new File(path);
+            if (!projDir.exists())
+                projDir.mkdirs();
+
+            File file = new File(path + "/tasks.json");
+            String[] save = { "{ \"task\" : [] }" };
+            Save(file, save);
+        }
+
         try {
-            String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
+            
             JSONObject obj = new JSONObject(loadJSONFromAsset(path + "/tasks.json"));
             taskList = obj.getJSONArray("tasks");
             for (int i = 0; i < taskList.length(); i++){
