@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RepManager.iml" filepath="$PROJECT_DIR$/RepManager.iml" />
+      <module fileurl="file://C:\Users\DANILO\Downloads\RepManager-master (1)\RepManager-master\RepManager.iml" filepath="C:\Users\DANILO\Downloads\RepManager-master (1)\RepManager-master\RepManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RepManager-master.iml" filepath="$PROJECT_DIR$/RepManager-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\DANILO\Downloads\RepManager-master (1)\RepManager-master\app\app.iml" filepath="C:\Users\DANILO\Downloads\RepManager-master (1)\RepManager-master\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-json/java-json.iml" filepath="$PROJECT_DIR$/java-json/java-json.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/libs.iml" filepath="$PROJECT_DIR$/libs/libs.iml" />
     </modules>
   </component>
 </project>

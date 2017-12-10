@@ -10,6 +10,18 @@
     <string name="task_title">Descrição</string>
     <string name="nova_task">Nova Task</string>
     <string name="add_task">Adicionar Task</string>
-
-
+    <string name="members">Membros</string>
+    <string name="repInfo">Informações</string>
+    <string name="marketPhoto">Imagem relativa ao produto do mercado</string>
+    <string name="memberPhoto">Imagem relativa ao membro</string>
+    <string name="Produto">Produto:</string>
+    <string name="Quantidade">Quantidade:</string>
+    <string name="financeButton">Botão de finanças</string>
+    <string name="repInfoButton">Informação da republica</string>
+    <string name="marketButton">Mercado</string>
+    <string name="tasksButton">Tasks</string>
+    <string name="appButton">App</string>
+    <string name="caronaButton">Carona</string>
+    <string name="finances">Finances</string>
+    <string name="vencimento">Vencimento:</string>
 </resources>

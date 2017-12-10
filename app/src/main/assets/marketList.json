@@ -1,0 +1,24 @@
+{
+	"marketList" : [
+		{
+			"name"			: "Frango",
+			"quantidade"	: "5"
+		},
+		{
+			"name"			: "Skol",
+			"quantidade"	: "12"
+		},
+		{
+			"name"			: "Brahma",
+			"quantidade"	: "48"
+		},
+		{
+			"name"			: "Bombril",
+			"quantidade"	: "1"
+		},
+		{
+			"name"			: "Arroz",
+			"quantidade"	: "20"
+		}
+	]
+}

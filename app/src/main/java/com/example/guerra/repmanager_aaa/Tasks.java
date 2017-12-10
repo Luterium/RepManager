@@ -48,8 +48,6 @@ public class Tasks extends AppCompatActivity {
     public String loadJSONFromAsset(String path) {
         String json = null;
         try {
-
-
             File initialFile = new File(path);
             InputStream is =  new FileInputStream(initialFile);
 
@@ -194,8 +192,6 @@ public class Tasks extends AppCompatActivity {
                 memberDate.setText(date);
             }
         };
-
-
         mBuilder.setView(mView);
         final AlertDialog dialogPop = mBuilder.create();
 
@@ -330,11 +326,9 @@ public class Tasks extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        Log.d("MyApp","I am aaaaaa");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
@@ -357,14 +351,9 @@ public class Tasks extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
-
         fab = (FloatingActionButton)findViewById(R.id.fab);
-
-
 
     }
 
@@ -389,7 +378,7 @@ public class Tasks extends AppCompatActivity {
         public View getView(int i, View view, ViewGroup viewGroup){
 
             view = getLayoutInflater().inflate(R.layout.custom_task_layout, null);
-//            ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
+//          ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
             TextView taskView = (TextView)view.findViewById(R.id.taskView);
             TextView responsibleViewContent = (TextView)view.findViewById(R.id.responsibleViewContent);
             TextView dataViewContent = (TextView)view.findViewById(R.id.dataViewContent);
@@ -401,8 +390,6 @@ public class Tasks extends AppCompatActivity {
 
             return view;
         }
-
-
 
     }
 }
