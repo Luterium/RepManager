@@ -1,12 +1,16 @@
 package com.example.guerra.repmanager_aaa;
 
 
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -48,13 +52,49 @@ public class Tasks extends AppCompatActivity {
     }
 
     public int sizeTaskList;
+    public FloatingActionButton fab;
     public List<String> responsibles = new ArrayList<String>();
     public List<String> tasks = new ArrayList<String>();
     public List<String> dates = new ArrayList<String>();
 
+    public void addTask(View view) {
+
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(Tasks.this);
+        View mView = getLayoutInflater().inflate(R.layout.dialog_new_task, null);
+
+        final EditText editTextMember = (EditText) mView.findViewById(R.id.editTextMember);
+        final EditText editDateLimit = (EditText) mView.findViewById(R.id.editDateLimit);
+        final EditText editTaskDescription = (EditText) mView.findViewById(R.id.editTaskDescription);
+        Button addTask = (Button) mView.findViewById(R.id.addTask);
+
+
+        addTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                if(!editTextMember.getText().toString().isEmpty() && !editDateLimit.getText().toString().isEmpty() && !editTaskDescription.getText().toString().isEmpty()){
+
+                    Log.d("MyApp","suck my dick");
+                }
+                else{
+
+                    Log.d("MyApp","fuck you");
+                }
+            }
+        });
+
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
+        Log.d("MyApp","I am hereaaaaa");
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Log.d("MyApp","I am aaaaaa");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
@@ -78,6 +118,10 @@ public class Tasks extends AppCompatActivity {
 
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
+
+        fab = (FloatingActionButton)findViewById(R.id.fab);
+
+
 
     }
 
@@ -114,6 +158,8 @@ public class Tasks extends AppCompatActivity {
 
             return view;
         }
+
+
 
     }
 }

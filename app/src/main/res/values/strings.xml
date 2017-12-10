@@ -5,4 +5,10 @@
     <string name="title_notifications">Notifications</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="membro">Membro</string>
+    <string name="data_task">Data limite</string>
+    <string name="task_title">Descrição</string>
+    <string name="nova_task">Nova Task</string>
+    <string name="add_task">Adicionar Task</string>
+
 </resources>

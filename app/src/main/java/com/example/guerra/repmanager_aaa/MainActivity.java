@@ -65,8 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void openTasks(View view)
-    {
+    public void openTasks(View view){
         Intent intent = new Intent(MainActivity.this, Tasks.class);
         startActivity(intent);
     }
