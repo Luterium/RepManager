@@ -374,7 +374,6 @@ public class Tasks extends AppCompatActivity {
             String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
             JSONObject obj = new JSONObject(loadJSONFromAsset(path + "/tasks.json"));
             taskList = obj.getJSONArray("tasks");
-            sizeTaskList = taskList.length();
             for (int i = 0; i < taskList.length(); i++){
 
                 JSONObject jsonObj = taskList.getJSONObject(i);
