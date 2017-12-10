@@ -69,7 +69,6 @@
         android:layout_toRightOf="@+id/responsibleViewContent"
         android:text=" Data:  "
         android:textSize="11sp" />
-
     <ImageButton
         android:id="@+id/removeButtom"
         android:layout_width="20dp"

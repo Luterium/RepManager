@@ -52,8 +52,6 @@ public class Tasks extends AppCompatActivity {
     public String loadJSONFromAsset(String path) {
         String json = null;
         try {
-
-
             File initialFile = new File(path);
             InputStream is =  new FileInputStream(initialFile);
 
@@ -155,9 +153,8 @@ public class Tasks extends AppCompatActivity {
 //
 //            }
 //        }
-
-
     }
+
     public void addTask(View view) {
 
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(Tasks.this);
@@ -225,8 +222,6 @@ public class Tasks extends AppCompatActivity {
                 memberDate.setText(date);
             }
         };
-
-
         mBuilder.setView(mView);
         final AlertDialog dialogPop = mBuilder.create();
 
@@ -250,13 +245,12 @@ public class Tasks extends AppCompatActivity {
                         member.put("responsible", memberSpinner.getSelectedItem().toString());
                         member.put("task", editTaskDescription.getText().toString());
                         member.put("date", memberDate.getText().toString());
-
                         taskList.put(member);
                         responsibles.add(memberSpinner.getSelectedItem().toString());
                         tasks.add(editTaskDescription.getText().toString());
                         dates.add(memberDate.getText().toString());
-
                         taskObj.put("tasks", taskList);
+
                         File file = new File(path + "/tasks.json");
                         String[] save = { taskObj.toString() };
                         Save(file, save);
@@ -265,19 +259,13 @@ public class Tasks extends AppCompatActivity {
                     catch(Exception e){
                         e.printStackTrace();
                     }
-
-
-                    Log.d("MyApp", responsibles.get(responsibles.size() - 1));
-
                     ListView listView = (ListView)findViewById(R.id.listView);
                     CustomAdapter newAdapter = new CustomAdapter();
                     listView.setAdapter(newAdapter);
 
+
                     dialogPop.dismiss();
                     Log.d("MyApp","suck my dick");
-
-
-
 
                 }
                 else{
@@ -374,11 +362,9 @@ public class Tasks extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        Log.d("MyApp","I am aaaaaa");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
@@ -388,6 +374,7 @@ public class Tasks extends AppCompatActivity {
             String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
             JSONObject obj = new JSONObject(loadJSONFromAsset(path + "/tasks.json"));
             taskList = obj.getJSONArray("tasks");
+            sizeTaskList = taskList.length();
             for (int i = 0; i < taskList.length(); i++){
 
                 JSONObject jsonObj = taskList.getJSONObject(i);
@@ -400,18 +387,11 @@ public class Tasks extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
-
         fab = (FloatingActionButton)findViewById(R.id.fab);
 
-
-
     }
-
-
 
     class CustomAdapter extends BaseAdapter {
 
@@ -434,7 +414,7 @@ public class Tasks extends AppCompatActivity {
         public View getView(final int i, View view, ViewGroup viewGroup){
 
             view = getLayoutInflater().inflate(R.layout.custom_task_layout, null);
-//            ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
+//          ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
             TextView taskView = (TextView)view.findViewById(R.id.taskView);
             TextView responsibleViewContent = (TextView)view.findViewById(R.id.responsibleViewContent);
             TextView dataViewContent = (TextView)view.findViewById(R.id.dataViewContent);
@@ -442,7 +422,6 @@ public class Tasks extends AppCompatActivity {
             responsibleViewContent.setText(responsibles.get(i));
             taskView.setText(tasks.get(i));
             dataViewContent.setText(dates.get(i));
-
             ImageButton delete = (ImageButton) view.findViewById(R.id.removeButtom);
 
             delete.setOnClickListener(new View.OnClickListener() {
@@ -477,11 +456,8 @@ public class Tasks extends AppCompatActivity {
             });
 
 
-
             return view;
         }
-
-
 
     }
 }
