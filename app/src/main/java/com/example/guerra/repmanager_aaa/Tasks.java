@@ -336,15 +336,17 @@ public class Tasks extends AppCompatActivity {
         ListView listView = (ListView)findViewById(R.id.listView);
 
 
+
         String path = getFilesDir().getAbsolutePath() + File.separator + "RepManager";
         File jsonFile = new File(path + "/tasks.json");
 
         if (!jsonFile.exists()){
+
             File projDir = new File(path);
             if (!projDir.exists())
                 projDir.mkdirs();
 
-            String[] save = { "{ \"task\" : [] }" };
+            String[] save = { "{\"tasks\" : [{\"responsible\" : \"Jesus Cristo\",\"task\" : \"Primeira Task\",\"date\" : \"25/12/0000\"}]}" };
             Save(jsonFile, save);
         }
 
