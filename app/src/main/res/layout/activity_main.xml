@@ -114,6 +114,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:background="@android:color/transparent"
+                    android:contentDescription="@string/produto"
                     android:onClick="openTasks"
                     android:scaleType="centerInside"
                     app:layout_constraintBottom_toTopOf="@+id/navigation"
@@ -142,16 +143,6 @@
 
 
         </TableLayout>
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navigation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation" />
 
     </android.support.constraint.ConstraintLayout>
 

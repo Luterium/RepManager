@@ -10,6 +10,8 @@
     <string name="task_title">Descrição</string>
     <string name="nova_task">Nova Task</string>
     <string name="add_task">Adicionar Task</string>
+    <string name="add_product">Adicionar Produto</string>
+    <string name="add_despesa">Adicionar Despesa</string>
     <string name="members">Membros</string>
     <string name="repInfo">Informações</string>
     <string name="marketPhoto">Imagem relativa ao produto do mercado</string>
@@ -24,4 +26,7 @@
     <string name="caronaButton">Carona</string>
     <string name="finances">Finances</string>
     <string name="vencimento">Vencimento:</string>
+    <string name="newProduct">Novo produto</string>
+    <string name="nomeGasto">Nome da Despesa</string>
+    <string name="valorDespesa">Valor da despesa</string>
 </resources>

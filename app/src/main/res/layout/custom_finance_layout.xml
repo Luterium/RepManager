@@ -15,7 +15,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp "
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/finances"
         app:srcCompat="@drawable/finances" />
 
@@ -60,4 +60,14 @@
         android:layout_toEndOf="@+id/vencimentoConta"
         android:layout_toRightOf="@+id/vencimentoConta"
         android:textSize="20sp"/>
+    <ImageButton
+        android:id="@+id/removeButtomFinance"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/taskView"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/remove" />
 </RelativeLayout>
